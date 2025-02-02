@@ -1,0 +1,49 @@
+//lines starting with ‘//’ are ignored by the program while reading so that the input text can be commented
+//title, will be printed on console
+MACHINE FOR UNARY MULTIPLICATION
+//input symbols – 1’s for defining unary-number, 0 as delimiter
+0 1
+//tape symbols – other than inputs
+Y
+//blank symbol
+B
+//number of states
+8
+//start state
+0
+//transitions
+//format – read,write,shift,next state
+//for state q0, 2 transitions to be read for this state
+2
+1 B R 1
+0 B R 6
+//state q1
+2
+0 0 R 2
+1 1 R 1
+//state q2
+2
+0 0 L 5
+1 Y R 3
+//state q3
+3
+0 0 R 3
+1 1 R 3
+B 1 L 4
+//state q4
+3
+0 0 L 4
+1 1 L 4
+Y Y R 2
+//state q5
+4
+0 0 L 5
+1 1 L 5
+Y 1 L 5
+B B R 0
+//state q6
+2
+1 B R 6
+0 B R 7
+//state q7 – machine halts when it reaches this state as 0 transitions are defined
+0
